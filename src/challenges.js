@@ -152,6 +152,7 @@ function techList(tech, name) {
       techObj.name = name;
       response.push(techObj);
     }
+    // https://ricardo-reis.medium.com/o-m%C3%A9todo-sort-do-array-javascript-482576734e0a (estudo)
     // o trecho do código abaixo foi copiado da pagina: https://pt.stackoverflow.com/questions/175564/ordenar-as-chaves-de-um-objeto-simulando-order-by-nome-asc  
     // início do código copiado 
     response.sort(function(a, b){
