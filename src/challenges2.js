@@ -10,7 +10,7 @@ function countRepeated(array) {
     } else if (current == newArray[index]) {
       current = newArray[index];
       sum++;
-      if(sum >= 3){
+      if (sum >= 3) {
         return true;
       }
     } else {
@@ -46,12 +46,29 @@ function generatePhoneNumber(phoneNumber) {
     }
   }
 }
-console.log(generatePhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]))
+// console.log(generatePhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]))
 
 // Desafio 12
-function triangleCheck() {
-  // seu código aqui
+function triangleCheck(lineA, lineB, lineC) {  
+  let sides = [lineA, lineB, lineC];
+  let othersSides = [];
+  let minSide = Math.min(lineA,lineB,lineC);
+  let sum = 0;
+  let result = false;
+  console.log(minSide)
+  for(let index in sides){
+    if(sides[index] !== minSide){
+      othersSides.push(sides[index])
+      sum += sides[index];
+    }
+  }
+  if (minSide < sum && minSide > Math.abs(othersSides[0]-othersSides[1])){
+    result = true;
+  }
+  return result
 }
+// console.log(triangleCheck(10, 14, 8))
+
 
 // Desafio 13
 function hydrate() {

@@ -166,10 +166,8 @@ function techList(tech, name) {
   } else {
     return 'Vazio!';
   }
-  
   return response;
 }
-
 // console.log(techList(["React", "Jest", "HTML", "CSS", "JavaScript"], "Lucas"))
 
 
