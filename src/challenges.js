@@ -143,9 +143,34 @@ function decode(param) {
 }
 
 // Desafio 10
-function techList() {
-  // seu código aqui
+function techList(tech, name) {
+  let response = [];  
+  if(tech.length > 0){
+    for(let index in tech){
+      var techObj = new Object();
+      techObj.tech = tech[index];
+      techObj.name = name;
+      response.push(techObj);
+    }
+    // o trecho do código abaixo foi copiado da pagina: https://pt.stackoverflow.com/questions/175564/ordenar-as-chaves-de-um-objeto-simulando-order-by-nome-asc  
+    // início do código copiado 
+    response.sort(function(a, b){
+      var aa = a.tech.toLowerCase();
+      var bb = b.tech.toLowerCase(); 
+      if(aa < bb) return -1;
+      if(aa > bb) return 1;
+      return 0;
+    });
+    // fim do código copiado
+  } else {
+    return 'Vazio!';
+  }
+  
+  return response;
 }
+
+// console.log(techList(["React", "Jest", "HTML", "CSS", "JavaScript"], "Lucas"))
+
 
 module.exports = {
   calcArea,
