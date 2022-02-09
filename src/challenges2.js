@@ -67,13 +67,29 @@ function triangleCheck(lineA, lineB, lineC) {
   }
   return result
 }
-// console.log(triangleCheck(10, 14, 8))
-
 
 // Desafio 13
-function hydrate() {
-  // seu código aqui
+function hydrate(sentence) {
+  let fSentence = sentence.split(',');
+  let sSentence = []; 
+  let newSentence = [];
+  let pattern = /[1-9]/g;
+  let sum = 0;
+  for(let index in fSentence){ 
+    sSentence = fSentence[index].split(' e');
+  }
+  fSentence.pop();
+  newSentence = fSentence.concat(sSentence);
+  for(let index in newSentence){
+    sum += parseFloat(newSentence[index].match(pattern))
+  }
+  if(sum === 1){
+    return `${sum} copo de água`;
+  } else {
+    return `${sum} copos de água`;
+  }
 }
+// console.log(hydrate("1 cachaça, 5 cervejas e 1 copo de vinho"))
 
 module.exports = {
   generatePhoneNumber,

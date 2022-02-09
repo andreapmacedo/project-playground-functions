@@ -74,12 +74,12 @@ function fizzBuzz(array) {
 
     if (is3 && is5) {
       result.push("fizzBuzz")
-    } else if (!is3 && !is5) {
-      result.push("bug!")
     } else if (is3) {
       result.push("fizz")
     } else if (is5) {
       result.push("buzz")
+    } else {
+      result.push("bug!")
     }
   }
   return result;
@@ -150,11 +150,10 @@ function techList(tech, name) {
       var techObj = new Object();
       techObj.tech = tech[index];
       techObj.name = name;
-      response.push(techObj);
+      response.push(techObj); 
     }
-    // https://ricardo-reis.medium.com/o-m%C3%A9todo-sort-do-array-javascript-482576734e0a (estudo)
-    // o trecho do código abaixo foi copiado da pagina: https://pt.stackoverflow.com/questions/175564/ordenar-as-chaves-de-um-objeto-simulando-order-by-nome-asc  
-    // início do código copiado 
+    // https://ricardo-reis.medium.com/o-m%C3%A9todo-sort-do-array-javascript-482576734e0a (material de estudo do caso)
+    // o trecho abaixo foi copiado da página: https://pt.stackoverflow.com/questions/175564/ordenar-as-chaves-de-um-objeto-simulando-order-by-nome-asc   
     response.sort(function(a, b){
       var aa = a.tech.toLowerCase();
       var bb = b.tech.toLowerCase(); 
